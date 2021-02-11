@@ -3,9 +3,9 @@
 // Genrated by Some Haskell Program written by narumij.
 //
 // Licenced under MIT Licence.
-// Copyright (c) narumij all rights reserved.
+// Copyright (c) 2021 narumij all rights reserved.
 //
-// memo> stack build; stack exec simd-swizzling-exe > simd_swizzling_xyz.swift
+// memo> stack build; stack exec simd_swizzling-exe > simd_swizzling_xyz.swift
 
 import simd
 
