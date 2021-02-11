@@ -15,11 +15,11 @@ public extension SIMD2 {
     }
     var xy: SIMD2<Scalar> {
         get { .init(x: x, y: y) }
-        set (v) { x = x; y = y }
+        set (v) { x = v.x; y = v.y }
     }
     var yx: SIMD2<Scalar> {
         get { .init(x: y, y: x) }
-        set (v) { x = y; y = x }
+        set (v) { y = v.x; x = v.y }
     }
     var yy: SIMD2<Scalar> {
         get { .init(x: y, y: y) }
@@ -44,14 +44,14 @@ public extension SIMD3 {
     }
     var xyz: SIMD3<Scalar> {
         get { .init(x: x, y: y, z: z) }
-        set (v) { x = x; y = y; z = z }
+        set (v) { x = v.x; y = v.y; z = v.z }
     }
     var xzx: SIMD3<Scalar> {
         get { .init(x: x, y: z, z: x) }
     }
     var xzy: SIMD3<Scalar> {
         get { .init(x: x, y: z, z: y) }
-        set (v) { x = x; y = z; z = y }
+        set (v) { x = v.x; z = v.y; y = v.z }
     }
     var xzz: SIMD3<Scalar> {
         get { .init(x: x, y: z, z: z) }
@@ -64,7 +64,7 @@ public extension SIMD3 {
     }
     var yxz: SIMD3<Scalar> {
         get { .init(x: y, y: x, z: z) }
-        set (v) { x = y; y = x; z = z }
+        set (v) { y = v.x; x = v.y; z = v.z }
     }
     var yyx: SIMD3<Scalar> {
         get { .init(x: y, y: y, z: x) }
@@ -77,7 +77,7 @@ public extension SIMD3 {
     }
     var yzx: SIMD3<Scalar> {
         get { .init(x: y, y: z, z: x) }
-        set (v) { x = y; y = z; z = x }
+        set (v) { y = v.x; z = v.y; x = v.z }
     }
     var yzy: SIMD3<Scalar> {
         get { .init(x: y, y: z, z: y) }
@@ -90,14 +90,14 @@ public extension SIMD3 {
     }
     var zxy: SIMD3<Scalar> {
         get { .init(x: z, y: x, z: y) }
-        set (v) { x = z; y = x; z = y }
+        set (v) { z = v.x; x = v.y; y = v.z }
     }
     var zxz: SIMD3<Scalar> {
         get { .init(x: z, y: x, z: z) }
     }
     var zyx: SIMD3<Scalar> {
         get { .init(x: z, y: y, z: x) }
-        set (v) { x = z; y = y; z = x }
+        set (v) { z = v.x; y = v.y; x = v.z }
     }
     var zyy: SIMD3<Scalar> {
         get { .init(x: z, y: y, z: y) }
@@ -119,30 +119,30 @@ public extension SIMD3 {
     }
     var xy: SIMD2<Scalar> {
         get { .init(x: x, y: y) }
-        set (v) { x = x; y = y }
+        set (v) { x = v.x; y = v.y }
     }
     var xz: SIMD2<Scalar> {
         get { .init(x: x, y: z) }
-        set (v) { x = x; y = z }
+        set (v) { x = v.x; z = v.y }
     }
     var yx: SIMD2<Scalar> {
         get { .init(x: y, y: x) }
-        set (v) { x = y; y = x }
+        set (v) { y = v.x; x = v.y }
     }
     var yy: SIMD2<Scalar> {
         get { .init(x: y, y: y) }
     }
     var yz: SIMD2<Scalar> {
         get { .init(x: y, y: z) }
-        set (v) { x = y; y = z }
+        set (v) { y = v.x; z = v.y }
     }
     var zx: SIMD2<Scalar> {
         get { .init(x: z, y: x) }
-        set (v) { x = z; y = x }
+        set (v) { z = v.x; x = v.y }
     }
     var zy: SIMD2<Scalar> {
         get { .init(x: z, y: y) }
-        set (v) { x = z; y = y }
+        set (v) { z = v.x; y = v.y }
     }
     var zz: SIMD2<Scalar> {
         get { .init(x: z, y: z) }
@@ -233,7 +233,7 @@ public extension SIMD4 {
     }
     var xyzw: SIMD4<Scalar> {
         get { .init(x: x, y: y, z: z, w: w) }
-        set (v) { x = x; y = y; z = z; w = w }
+        set (v) { x = v.x; y = v.y; z = v.z; w = v.w }
     }
     var xywx: SIMD4<Scalar> {
         get { .init(x: x, y: y, z: w, w: x) }
@@ -243,7 +243,7 @@ public extension SIMD4 {
     }
     var xywz: SIMD4<Scalar> {
         get { .init(x: x, y: y, z: w, w: z) }
-        set (v) { x = x; y = y; z = w; w = z }
+        set (v) { x = v.x; y = v.y; w = v.z; z = v.w }
     }
     var xyww: SIMD4<Scalar> {
         get { .init(x: x, y: y, z: w, w: w) }
@@ -271,7 +271,7 @@ public extension SIMD4 {
     }
     var xzyw: SIMD4<Scalar> {
         get { .init(x: x, y: z, z: y, w: w) }
-        set (v) { x = x; y = z; z = y; w = w }
+        set (v) { x = v.x; z = v.y; y = v.z; w = v.w }
     }
     var xzzx: SIMD4<Scalar> {
         get { .init(x: x, y: z, z: z, w: x) }
@@ -290,7 +290,7 @@ public extension SIMD4 {
     }
     var xzwy: SIMD4<Scalar> {
         get { .init(x: x, y: z, z: w, w: y) }
-        set (v) { x = x; y = z; z = w; w = y }
+        set (v) { x = v.x; z = v.y; w = v.z; y = v.w }
     }
     var xzwz: SIMD4<Scalar> {
         get { .init(x: x, y: z, z: w, w: z) }
@@ -318,7 +318,7 @@ public extension SIMD4 {
     }
     var xwyz: SIMD4<Scalar> {
         get { .init(x: x, y: w, z: y, w: z) }
-        set (v) { x = x; y = w; z = y; w = z }
+        set (v) { x = v.x; w = v.y; y = v.z; z = v.w }
     }
     var xwyw: SIMD4<Scalar> {
         get { .init(x: x, y: w, z: y, w: w) }
@@ -328,7 +328,7 @@ public extension SIMD4 {
     }
     var xwzy: SIMD4<Scalar> {
         get { .init(x: x, y: w, z: z, w: y) }
-        set (v) { x = x; y = w; z = z; w = y }
+        set (v) { x = v.x; w = v.y; z = v.z; y = v.w }
     }
     var xwzz: SIMD4<Scalar> {
         get { .init(x: x, y: w, z: z, w: z) }
@@ -383,7 +383,7 @@ public extension SIMD4 {
     }
     var yxzw: SIMD4<Scalar> {
         get { .init(x: y, y: x, z: z, w: w) }
-        set (v) { x = y; y = x; z = z; w = w }
+        set (v) { y = v.x; x = v.y; z = v.z; w = v.w }
     }
     var yxwx: SIMD4<Scalar> {
         get { .init(x: y, y: x, z: w, w: x) }
@@ -393,7 +393,7 @@ public extension SIMD4 {
     }
     var yxwz: SIMD4<Scalar> {
         get { .init(x: y, y: x, z: w, w: z) }
-        set (v) { x = y; y = x; z = w; w = z }
+        set (v) { y = v.x; x = v.y; w = v.z; z = v.w }
     }
     var yxww: SIMD4<Scalar> {
         get { .init(x: y, y: x, z: w, w: w) }
@@ -457,7 +457,7 @@ public extension SIMD4 {
     }
     var yzxw: SIMD4<Scalar> {
         get { .init(x: y, y: z, z: x, w: w) }
-        set (v) { x = y; y = z; z = x; w = w }
+        set (v) { y = v.x; z = v.y; x = v.z; w = v.w }
     }
     var yzyx: SIMD4<Scalar> {
         get { .init(x: y, y: z, z: y, w: x) }
@@ -485,7 +485,7 @@ public extension SIMD4 {
     }
     var yzwx: SIMD4<Scalar> {
         get { .init(x: y, y: z, z: w, w: x) }
-        set (v) { x = y; y = z; z = w; w = x }
+        set (v) { y = v.x; z = v.y; w = v.z; x = v.w }
     }
     var yzwy: SIMD4<Scalar> {
         get { .init(x: y, y: z, z: w, w: y) }
@@ -504,7 +504,7 @@ public extension SIMD4 {
     }
     var ywxz: SIMD4<Scalar> {
         get { .init(x: y, y: w, z: x, w: z) }
-        set (v) { x = y; y = w; z = x; w = z }
+        set (v) { y = v.x; w = v.y; x = v.z; z = v.w }
     }
     var ywxw: SIMD4<Scalar> {
         get { .init(x: y, y: w, z: x, w: w) }
@@ -523,7 +523,7 @@ public extension SIMD4 {
     }
     var ywzx: SIMD4<Scalar> {
         get { .init(x: y, y: w, z: z, w: x) }
-        set (v) { x = y; y = w; z = z; w = x }
+        set (v) { y = v.x; w = v.y; z = v.z; x = v.w }
     }
     var ywzy: SIMD4<Scalar> {
         get { .init(x: y, y: w, z: z, w: y) }
@@ -569,7 +569,7 @@ public extension SIMD4 {
     }
     var zxyw: SIMD4<Scalar> {
         get { .init(x: z, y: x, z: y, w: w) }
-        set (v) { x = z; y = x; z = y; w = w }
+        set (v) { z = v.x; x = v.y; y = v.z; w = v.w }
     }
     var zxzx: SIMD4<Scalar> {
         get { .init(x: z, y: x, z: z, w: x) }
@@ -588,7 +588,7 @@ public extension SIMD4 {
     }
     var zxwy: SIMD4<Scalar> {
         get { .init(x: z, y: x, z: w, w: y) }
-        set (v) { x = z; y = x; z = w; w = y }
+        set (v) { z = v.x; x = v.y; w = v.z; y = v.w }
     }
     var zxwz: SIMD4<Scalar> {
         get { .init(x: z, y: x, z: w, w: z) }
@@ -607,7 +607,7 @@ public extension SIMD4 {
     }
     var zyxw: SIMD4<Scalar> {
         get { .init(x: z, y: y, z: x, w: w) }
-        set (v) { x = z; y = y; z = x; w = w }
+        set (v) { z = v.x; y = v.y; x = v.z; w = v.w }
     }
     var zyyx: SIMD4<Scalar> {
         get { .init(x: z, y: y, z: y, w: x) }
@@ -635,7 +635,7 @@ public extension SIMD4 {
     }
     var zywx: SIMD4<Scalar> {
         get { .init(x: z, y: y, z: w, w: x) }
-        set (v) { x = z; y = y; z = w; w = x }
+        set (v) { z = v.x; y = v.y; w = v.z; x = v.w }
     }
     var zywy: SIMD4<Scalar> {
         get { .init(x: z, y: y, z: w, w: y) }
@@ -699,7 +699,7 @@ public extension SIMD4 {
     }
     var zwxy: SIMD4<Scalar> {
         get { .init(x: z, y: w, z: x, w: y) }
-        set (v) { x = z; y = w; z = x; w = y }
+        set (v) { z = v.x; w = v.y; x = v.z; y = v.w }
     }
     var zwxz: SIMD4<Scalar> {
         get { .init(x: z, y: w, z: x, w: z) }
@@ -709,7 +709,7 @@ public extension SIMD4 {
     }
     var zwyx: SIMD4<Scalar> {
         get { .init(x: z, y: w, z: y, w: x) }
-        set (v) { x = z; y = w; z = y; w = x }
+        set (v) { z = v.x; w = v.y; y = v.z; x = v.w }
     }
     var zwyy: SIMD4<Scalar> {
         get { .init(x: z, y: w, z: y, w: y) }
@@ -764,7 +764,7 @@ public extension SIMD4 {
     }
     var wxyz: SIMD4<Scalar> {
         get { .init(x: w, y: x, z: y, w: z) }
-        set (v) { x = w; y = x; z = y; w = z }
+        set (v) { w = v.x; x = v.y; y = v.z; z = v.w }
     }
     var wxyw: SIMD4<Scalar> {
         get { .init(x: w, y: x, z: y, w: w) }
@@ -774,7 +774,7 @@ public extension SIMD4 {
     }
     var wxzy: SIMD4<Scalar> {
         get { .init(x: w, y: x, z: z, w: y) }
-        set (v) { x = w; y = x; z = z; w = y }
+        set (v) { w = v.x; x = v.y; z = v.z; y = v.w }
     }
     var wxzz: SIMD4<Scalar> {
         get { .init(x: w, y: x, z: z, w: z) }
@@ -802,7 +802,7 @@ public extension SIMD4 {
     }
     var wyxz: SIMD4<Scalar> {
         get { .init(x: w, y: y, z: x, w: z) }
-        set (v) { x = w; y = y; z = x; w = z }
+        set (v) { w = v.x; y = v.y; x = v.z; z = v.w }
     }
     var wyxw: SIMD4<Scalar> {
         get { .init(x: w, y: y, z: x, w: w) }
@@ -821,7 +821,7 @@ public extension SIMD4 {
     }
     var wyzx: SIMD4<Scalar> {
         get { .init(x: w, y: y, z: z, w: x) }
-        set (v) { x = w; y = y; z = z; w = x }
+        set (v) { w = v.x; y = v.y; z = v.z; x = v.w }
     }
     var wyzy: SIMD4<Scalar> {
         get { .init(x: w, y: y, z: z, w: y) }
@@ -849,7 +849,7 @@ public extension SIMD4 {
     }
     var wzxy: SIMD4<Scalar> {
         get { .init(x: w, y: z, z: x, w: y) }
-        set (v) { x = w; y = z; z = x; w = y }
+        set (v) { w = v.x; z = v.y; x = v.z; y = v.w }
     }
     var wzxz: SIMD4<Scalar> {
         get { .init(x: w, y: z, z: x, w: z) }
@@ -859,7 +859,7 @@ public extension SIMD4 {
     }
     var wzyx: SIMD4<Scalar> {
         get { .init(x: w, y: z, z: y, w: x) }
-        set (v) { x = w; y = z; z = y; w = x }
+        set (v) { w = v.x; z = v.y; y = v.z; x = v.w }
     }
     var wzyy: SIMD4<Scalar> {
         get { .init(x: w, y: z, z: y, w: y) }
@@ -962,36 +962,36 @@ public extension SIMD4 {
     }
     var xyz: SIMD3<Scalar> {
         get { .init(x: x, y: y, z: z) }
-        set (v) { x = x; y = y; z = z }
+        set (v) { x = v.x; y = v.y; z = v.z }
     }
     var xyw: SIMD3<Scalar> {
         get { .init(x: x, y: y, z: w) }
-        set (v) { x = x; y = y; z = w }
+        set (v) { x = v.x; y = v.y; w = v.z }
     }
     var xzx: SIMD3<Scalar> {
         get { .init(x: x, y: z, z: x) }
     }
     var xzy: SIMD3<Scalar> {
         get { .init(x: x, y: z, z: y) }
-        set (v) { x = x; y = z; z = y }
+        set (v) { x = v.x; z = v.y; y = v.z }
     }
     var xzz: SIMD3<Scalar> {
         get { .init(x: x, y: z, z: z) }
     }
     var xzw: SIMD3<Scalar> {
         get { .init(x: x, y: z, z: w) }
-        set (v) { x = x; y = z; z = w }
+        set (v) { x = v.x; z = v.y; w = v.z }
     }
     var xwx: SIMD3<Scalar> {
         get { .init(x: x, y: w, z: x) }
     }
     var xwy: SIMD3<Scalar> {
         get { .init(x: x, y: w, z: y) }
-        set (v) { x = x; y = w; z = y }
+        set (v) { x = v.x; w = v.y; y = v.z }
     }
     var xwz: SIMD3<Scalar> {
         get { .init(x: x, y: w, z: z) }
-        set (v) { x = x; y = w; z = z }
+        set (v) { x = v.x; w = v.y; z = v.z }
     }
     var xww: SIMD3<Scalar> {
         get { .init(x: x, y: w, z: w) }
@@ -1004,11 +1004,11 @@ public extension SIMD4 {
     }
     var yxz: SIMD3<Scalar> {
         get { .init(x: y, y: x, z: z) }
-        set (v) { x = y; y = x; z = z }
+        set (v) { y = v.x; x = v.y; z = v.z }
     }
     var yxw: SIMD3<Scalar> {
         get { .init(x: y, y: x, z: w) }
-        set (v) { x = y; y = x; z = w }
+        set (v) { y = v.x; x = v.y; w = v.z }
     }
     var yyx: SIMD3<Scalar> {
         get { .init(x: y, y: y, z: x) }
@@ -1024,7 +1024,7 @@ public extension SIMD4 {
     }
     var yzx: SIMD3<Scalar> {
         get { .init(x: y, y: z, z: x) }
-        set (v) { x = y; y = z; z = x }
+        set (v) { y = v.x; z = v.y; x = v.z }
     }
     var yzy: SIMD3<Scalar> {
         get { .init(x: y, y: z, z: y) }
@@ -1034,18 +1034,18 @@ public extension SIMD4 {
     }
     var yzw: SIMD3<Scalar> {
         get { .init(x: y, y: z, z: w) }
-        set (v) { x = y; y = z; z = w }
+        set (v) { y = v.x; z = v.y; w = v.z }
     }
     var ywx: SIMD3<Scalar> {
         get { .init(x: y, y: w, z: x) }
-        set (v) { x = y; y = w; z = x }
+        set (v) { y = v.x; w = v.y; x = v.z }
     }
     var ywy: SIMD3<Scalar> {
         get { .init(x: y, y: w, z: y) }
     }
     var ywz: SIMD3<Scalar> {
         get { .init(x: y, y: w, z: z) }
-        set (v) { x = y; y = w; z = z }
+        set (v) { y = v.x; w = v.y; z = v.z }
     }
     var yww: SIMD3<Scalar> {
         get { .init(x: y, y: w, z: w) }
@@ -1055,18 +1055,18 @@ public extension SIMD4 {
     }
     var zxy: SIMD3<Scalar> {
         get { .init(x: z, y: x, z: y) }
-        set (v) { x = z; y = x; z = y }
+        set (v) { z = v.x; x = v.y; y = v.z }
     }
     var zxz: SIMD3<Scalar> {
         get { .init(x: z, y: x, z: z) }
     }
     var zxw: SIMD3<Scalar> {
         get { .init(x: z, y: x, z: w) }
-        set (v) { x = z; y = x; z = w }
+        set (v) { z = v.x; x = v.y; w = v.z }
     }
     var zyx: SIMD3<Scalar> {
         get { .init(x: z, y: y, z: x) }
-        set (v) { x = z; y = y; z = x }
+        set (v) { z = v.x; y = v.y; x = v.z }
     }
     var zyy: SIMD3<Scalar> {
         get { .init(x: z, y: y, z: y) }
@@ -1076,7 +1076,7 @@ public extension SIMD4 {
     }
     var zyw: SIMD3<Scalar> {
         get { .init(x: z, y: y, z: w) }
-        set (v) { x = z; y = y; z = w }
+        set (v) { z = v.x; y = v.y; w = v.z }
     }
     var zzx: SIMD3<Scalar> {
         get { .init(x: z, y: z, z: x) }
@@ -1092,11 +1092,11 @@ public extension SIMD4 {
     }
     var zwx: SIMD3<Scalar> {
         get { .init(x: z, y: w, z: x) }
-        set (v) { x = z; y = w; z = x }
+        set (v) { z = v.x; w = v.y; x = v.z }
     }
     var zwy: SIMD3<Scalar> {
         get { .init(x: z, y: w, z: y) }
-        set (v) { x = z; y = w; z = y }
+        set (v) { z = v.x; w = v.y; y = v.z }
     }
     var zwz: SIMD3<Scalar> {
         get { .init(x: z, y: w, z: z) }
@@ -1109,36 +1109,36 @@ public extension SIMD4 {
     }
     var wxy: SIMD3<Scalar> {
         get { .init(x: w, y: x, z: y) }
-        set (v) { x = w; y = x; z = y }
+        set (v) { w = v.x; x = v.y; y = v.z }
     }
     var wxz: SIMD3<Scalar> {
         get { .init(x: w, y: x, z: z) }
-        set (v) { x = w; y = x; z = z }
+        set (v) { w = v.x; x = v.y; z = v.z }
     }
     var wxw: SIMD3<Scalar> {
         get { .init(x: w, y: x, z: w) }
     }
     var wyx: SIMD3<Scalar> {
         get { .init(x: w, y: y, z: x) }
-        set (v) { x = w; y = y; z = x }
+        set (v) { w = v.x; y = v.y; x = v.z }
     }
     var wyy: SIMD3<Scalar> {
         get { .init(x: w, y: y, z: y) }
     }
     var wyz: SIMD3<Scalar> {
         get { .init(x: w, y: y, z: z) }
-        set (v) { x = w; y = y; z = z }
+        set (v) { w = v.x; y = v.y; z = v.z }
     }
     var wyw: SIMD3<Scalar> {
         get { .init(x: w, y: y, z: w) }
     }
     var wzx: SIMD3<Scalar> {
         get { .init(x: w, y: z, z: x) }
-        set (v) { x = w; y = z; z = x }
+        set (v) { w = v.x; z = v.y; x = v.z }
     }
     var wzy: SIMD3<Scalar> {
         get { .init(x: w, y: z, z: y) }
-        set (v) { x = w; y = z; z = y }
+        set (v) { w = v.x; z = v.y; y = v.z }
     }
     var wzz: SIMD3<Scalar> {
         get { .init(x: w, y: z, z: z) }
@@ -1163,57 +1163,57 @@ public extension SIMD4 {
     }
     var xy: SIMD2<Scalar> {
         get { .init(x: x, y: y) }
-        set (v) { x = x; y = y }
+        set (v) { x = v.x; y = v.y }
     }
     var xz: SIMD2<Scalar> {
         get { .init(x: x, y: z) }
-        set (v) { x = x; y = z }
+        set (v) { x = v.x; z = v.y }
     }
     var xw: SIMD2<Scalar> {
         get { .init(x: x, y: w) }
-        set (v) { x = x; y = w }
+        set (v) { x = v.x; w = v.y }
     }
     var yx: SIMD2<Scalar> {
         get { .init(x: y, y: x) }
-        set (v) { x = y; y = x }
+        set (v) { y = v.x; x = v.y }
     }
     var yy: SIMD2<Scalar> {
         get { .init(x: y, y: y) }
     }
     var yz: SIMD2<Scalar> {
         get { .init(x: y, y: z) }
-        set (v) { x = y; y = z }
+        set (v) { y = v.x; z = v.y }
     }
     var yw: SIMD2<Scalar> {
         get { .init(x: y, y: w) }
-        set (v) { x = y; y = w }
+        set (v) { y = v.x; w = v.y }
     }
     var zx: SIMD2<Scalar> {
         get { .init(x: z, y: x) }
-        set (v) { x = z; y = x }
+        set (v) { z = v.x; x = v.y }
     }
     var zy: SIMD2<Scalar> {
         get { .init(x: z, y: y) }
-        set (v) { x = z; y = y }
+        set (v) { z = v.x; y = v.y }
     }
     var zz: SIMD2<Scalar> {
         get { .init(x: z, y: z) }
     }
     var zw: SIMD2<Scalar> {
         get { .init(x: z, y: w) }
-        set (v) { x = z; y = w }
+        set (v) { z = v.x; w = v.y }
     }
     var wx: SIMD2<Scalar> {
         get { .init(x: w, y: x) }
-        set (v) { x = w; y = x }
+        set (v) { w = v.x; x = v.y }
     }
     var wy: SIMD2<Scalar> {
         get { .init(x: w, y: y) }
-        set (v) { x = w; y = y }
+        set (v) { w = v.x; y = v.y }
     }
     var wz: SIMD2<Scalar> {
         get { .init(x: w, y: z) }
-        set (v) { x = w; y = z }
+        set (v) { w = v.x; z = v.y }
     }
     var ww: SIMD2<Scalar> {
         get { .init(x: w, y: w) }

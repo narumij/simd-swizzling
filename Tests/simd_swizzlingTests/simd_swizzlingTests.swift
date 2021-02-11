@@ -8,6 +8,10 @@ final class simd_swizzlingTests: XCTestCase {
         // results.
         XCTAssertEqual( SIMD3<Int>(1,2,3).zyx, SIMD3<Int>(3,2,1))
         XCTAssertEqual( SIMD3<Int>(1,2,3).xxx, SIMD3<Int>(1,1,1))
+        
+        var p: SIMD4<Int> = .zero
+        p.xz = .init(x: 2, y: 4)
+        XCTAssertEqual( p, SIMD4<Int>(2,0,4,0))
     }
 
     static var allTests = [
