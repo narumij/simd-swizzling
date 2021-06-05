@@ -11,17 +11,15 @@ let package = Package(
         .library(name: "SIMDModule",  targets: ["SIMDModule"]),
         .library(name: "TupleModule",  targets: ["TupleModule"]),
     ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
+    
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target( name: "SIMDSwizzling", dependencies: ["SIMDModule","TupleModule"]),
-        .testTarget( name: "SIMDSwizzlingTests", dependencies: ["SIMDSwizzling"]),
-        
         .target( name: "SIMDModule", dependencies: []),
         .target( name: "TupleModule", dependencies: []),
+        
+        .testTarget( name: "SIMDSwizzlingTests", dependencies: ["SIMDSwizzling"]),
+        
     ]
 )
