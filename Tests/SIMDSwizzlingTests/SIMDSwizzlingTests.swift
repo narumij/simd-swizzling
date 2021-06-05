@@ -1,6 +1,7 @@
 import XCTest
-@testable import SIMDModule
-@testable import TupleModule
+
+@testable import SimdSwizzling
+//@testable import Tuple
 
 final class simd_swizzlingTests: XCTestCase {
     func testExample() {
