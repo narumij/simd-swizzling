@@ -7,9 +7,9 @@ let package = Package(
     name: "simd-swizzling",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(name: "simd_swizzling",  targets: ["simd_swizzling"]),
-        .library(name: "simd_swizzling_xyz",  targets: ["simd_swizzling_xyz"]),
-        .library(name: "simd_tuple_xyz",  targets: ["simd_tuple_xyz"]),
+        .library(name: "simd-swizzling",  targets: ["simd_swizzling"]),
+        .library(name: "simd-swizzling_xyz",  targets: ["simd_swizzling_xyz"]),
+        .library(name: "simd-tuple_xyz",  targets: ["simd_tuple_xyz"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
