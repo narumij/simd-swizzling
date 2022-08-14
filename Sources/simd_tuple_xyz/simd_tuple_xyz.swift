@@ -5,1218 +5,1218 @@
 // Licenced under MIT Licence.
 // Copyright (c) 2021 narumij all rights reserved.
 //
-// memo> stack build; stack exec simd-swizzling-exe > simd_tuple_xyz.swift
+// memo> stack build; stack exec simd-swizzling-exe > simd_tuple.swift
 
 import simd
 
 public extension SIMD2 {
-    var xxTuple: (x:Scalar, y:Scalar) {
-        get { (x: x, y: x) }
+    var xx: (x:Scalar, y:Scalar) {
+        get { (x, x) }
     }
-    var xyTuple: (x:Scalar, y:Scalar) {
-        get { (x: x, y: y) }
-        set (v) { x = v.0; y = v.1 }
+    var xy: (x:Scalar, y:Scalar) {
+        get { (x, y) }
+        set { (x, y) = newValue }
     }
-    var yxTuple: (x:Scalar, y:Scalar) {
-        get { (x: y, y: x) }
-        set (v) { y = v.0; x = v.1 }
+    var yx: (x:Scalar, y:Scalar) {
+        get { (y, x) }
+        set { (y, x) = newValue }
     }
-    var yyTuple: (x:Scalar, y:Scalar) {
-        get { (x: y, y: y) }
+    var yy: (x:Scalar, y:Scalar) {
+        get { (y, y) }
     }
 }
 
 public extension SIMD3 {
-    var xxxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: x, z: x) }
+    var xxx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, x, x) }
     }
-    var xxyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: x, z: y) }
+    var xxy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, x, y) }
     }
-    var xxzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: x, z: z) }
+    var xxz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, x, z) }
     }
-    var xyxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: y, z: x) }
+    var xyx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, y, x) }
     }
-    var xyyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: y, z: y) }
+    var xyy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, y, y) }
     }
-    var xyzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: y, z: z) }
-        set (v) { x = v.0; y = v.1; z = v.2 }
+    var xyz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, y, z) }
+        set { (x, y, z) = newValue }
     }
-    var xzxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: z, z: x) }
+    var xzx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, z, x) }
     }
-    var xzyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: z, z: y) }
-        set (v) { x = v.0; z = v.1; y = v.2 }
+    var xzy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, z, y) }
+        set { (x, z, y) = newValue }
     }
-    var xzzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: z, z: z) }
+    var xzz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, z, z) }
     }
-    var yxxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: x, z: x) }
+    var yxx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, x, x) }
     }
-    var yxyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: x, z: y) }
+    var yxy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, x, y) }
     }
-    var yxzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: x, z: z) }
-        set (v) { y = v.0; x = v.1; z = v.2 }
+    var yxz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, x, z) }
+        set { (y, x, z) = newValue }
     }
-    var yyxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: y, z: x) }
+    var yyx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, y, x) }
     }
-    var yyyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: y, z: y) }
+    var yyy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, y, y) }
     }
-    var yyzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: y, z: z) }
+    var yyz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, y, z) }
     }
-    var yzxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: z, z: x) }
-        set (v) { y = v.0; z = v.1; x = v.2 }
+    var yzx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, z, x) }
+        set { (y, z, x) = newValue }
     }
-    var yzyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: z, z: y) }
+    var yzy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, z, y) }
     }
-    var yzzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: z, z: z) }
+    var yzz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, z, z) }
     }
-    var zxxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: x, z: x) }
+    var zxx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, x, x) }
     }
-    var zxyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: x, z: y) }
-        set (v) { z = v.0; x = v.1; y = v.2 }
+    var zxy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, x, y) }
+        set { (z, x, y) = newValue }
     }
-    var zxzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: x, z: z) }
+    var zxz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, x, z) }
     }
-    var zyxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: y, z: x) }
-        set (v) { z = v.0; y = v.1; x = v.2 }
+    var zyx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, y, x) }
+        set { (z, y, x) = newValue }
     }
-    var zyyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: y, z: y) }
+    var zyy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, y, y) }
     }
-    var zyzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: y, z: z) }
+    var zyz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, y, z) }
     }
-    var zzxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: z, z: x) }
+    var zzx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, z, x) }
     }
-    var zzyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: z, z: y) }
+    var zzy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, z, y) }
     }
-    var zzzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: z, z: z) }
+    var zzz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, z, z) }
     }
-    var xxTuple: (x:Scalar, y:Scalar) {
-        get { (x: x, y: x) }
+    var xx: (x:Scalar, y:Scalar) {
+        get { (x, x) }
     }
-    var xyTuple: (x:Scalar, y:Scalar) {
-        get { (x: x, y: y) }
-        set (v) { x = v.0; y = v.1 }
+    var xy: (x:Scalar, y:Scalar) {
+        get { (x, y) }
+        set { (x, y) = newValue }
     }
-    var xzTuple: (x:Scalar, y:Scalar) {
-        get { (x: x, y: z) }
-        set (v) { x = v.0; z = v.1 }
+    var xz: (x:Scalar, y:Scalar) {
+        get { (x, z) }
+        set { (x, z) = newValue }
     }
-    var yxTuple: (x:Scalar, y:Scalar) {
-        get { (x: y, y: x) }
-        set (v) { y = v.0; x = v.1 }
+    var yx: (x:Scalar, y:Scalar) {
+        get { (y, x) }
+        set { (y, x) = newValue }
     }
-    var yyTuple: (x:Scalar, y:Scalar) {
-        get { (x: y, y: y) }
+    var yy: (x:Scalar, y:Scalar) {
+        get { (y, y) }
     }
-    var yzTuple: (x:Scalar, y:Scalar) {
-        get { (x: y, y: z) }
-        set (v) { y = v.0; z = v.1 }
+    var yz: (x:Scalar, y:Scalar) {
+        get { (y, z) }
+        set { (y, z) = newValue }
     }
-    var zxTuple: (x:Scalar, y:Scalar) {
-        get { (x: z, y: x) }
-        set (v) { z = v.0; x = v.1 }
+    var zx: (x:Scalar, y:Scalar) {
+        get { (z, x) }
+        set { (z, x) = newValue }
     }
-    var zyTuple: (x:Scalar, y:Scalar) {
-        get { (x: z, y: y) }
-        set (v) { z = v.0; y = v.1 }
+    var zy: (x:Scalar, y:Scalar) {
+        get { (z, y) }
+        set { (z, y) = newValue }
     }
-    var zzTuple: (x:Scalar, y:Scalar) {
-        get { (x: z, y: z) }
+    var zz: (x:Scalar, y:Scalar) {
+        get { (z, z) }
     }
 }
 
 public extension SIMD4 {
-    var xxxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: x, w: x) }
+    var xxxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, x, x) }
     }
-    var xxxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: x, w: y) }
+    var xxxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, x, y) }
     }
-    var xxxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: x, w: z) }
+    var xxxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, x, z) }
     }
-    var xxxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: x, w: w) }
+    var xxxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, x, w) }
     }
-    var xxyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: y, w: x) }
+    var xxyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, y, x) }
     }
-    var xxyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: y, w: y) }
+    var xxyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, y, y) }
     }
-    var xxyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: y, w: z) }
+    var xxyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, y, z) }
     }
-    var xxywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: y, w: w) }
+    var xxyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, y, w) }
     }
-    var xxzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: z, w: x) }
+    var xxzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, z, x) }
     }
-    var xxzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: z, w: y) }
+    var xxzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, z, y) }
     }
-    var xxzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: z, w: z) }
+    var xxzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, z, z) }
     }
-    var xxzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: z, w: w) }
+    var xxzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, z, w) }
     }
-    var xxwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: w, w: x) }
+    var xxwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, w, x) }
     }
-    var xxwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: w, w: y) }
+    var xxwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, w, y) }
     }
-    var xxwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: w, w: z) }
+    var xxwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, w, z) }
     }
-    var xxwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: x, z: w, w: w) }
+    var xxww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, x, w, w) }
     }
-    var xyxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: x, w: x) }
+    var xyxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, x, x) }
     }
-    var xyxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: x, w: y) }
+    var xyxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, x, y) }
     }
-    var xyxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: x, w: z) }
+    var xyxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, x, z) }
     }
-    var xyxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: x, w: w) }
+    var xyxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, x, w) }
     }
-    var xyyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: y, w: x) }
+    var xyyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, y, x) }
     }
-    var xyyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: y, w: y) }
+    var xyyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, y, y) }
     }
-    var xyyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: y, w: z) }
+    var xyyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, y, z) }
     }
-    var xyywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: y, w: w) }
+    var xyyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, y, w) }
     }
-    var xyzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: z, w: x) }
+    var xyzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, z, x) }
     }
-    var xyzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: z, w: y) }
+    var xyzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, z, y) }
     }
-    var xyzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: z, w: z) }
+    var xyzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, z, z) }
     }
-    var xyzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: z, w: w) }
-        set (v) { x = v.0; y = v.1; z = v.2; w = v.3 }
+    var xyzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, z, w) }
+        set { (x, y, z, w) = newValue }
     }
-    var xywxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: w, w: x) }
+    var xywx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, w, x) }
     }
-    var xywyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: w, w: y) }
+    var xywy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, w, y) }
     }
-    var xywzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: w, w: z) }
-        set (v) { x = v.0; y = v.1; w = v.2; z = v.3 }
+    var xywz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, w, z) }
+        set { (x, y, w, z) = newValue }
     }
-    var xywwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: y, z: w, w: w) }
+    var xyww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, y, w, w) }
     }
-    var xzxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: x, w: x) }
+    var xzxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, x, x) }
     }
-    var xzxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: x, w: y) }
+    var xzxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, x, y) }
     }
-    var xzxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: x, w: z) }
+    var xzxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, x, z) }
     }
-    var xzxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: x, w: w) }
+    var xzxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, x, w) }
     }
-    var xzyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: y, w: x) }
+    var xzyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, y, x) }
     }
-    var xzyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: y, w: y) }
+    var xzyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, y, y) }
     }
-    var xzyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: y, w: z) }
+    var xzyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, y, z) }
     }
-    var xzywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: y, w: w) }
-        set (v) { x = v.0; z = v.1; y = v.2; w = v.3 }
+    var xzyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, y, w) }
+        set { (x, z, y, w) = newValue }
     }
-    var xzzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: z, w: x) }
+    var xzzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, z, x) }
     }
-    var xzzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: z, w: y) }
+    var xzzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, z, y) }
     }
-    var xzzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: z, w: z) }
+    var xzzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, z, z) }
     }
-    var xzzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: z, w: w) }
+    var xzzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, z, w) }
     }
-    var xzwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: w, w: x) }
+    var xzwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, w, x) }
     }
-    var xzwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: w, w: y) }
-        set (v) { x = v.0; z = v.1; w = v.2; y = v.3 }
+    var xzwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, w, y) }
+        set { (x, z, w, y) = newValue }
     }
-    var xzwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: w, w: z) }
+    var xzwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, w, z) }
     }
-    var xzwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: z, z: w, w: w) }
+    var xzww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, z, w, w) }
     }
-    var xwxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: x, w: x) }
+    var xwxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, x, x) }
     }
-    var xwxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: x, w: y) }
+    var xwxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, x, y) }
     }
-    var xwxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: x, w: z) }
+    var xwxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, x, z) }
     }
-    var xwxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: x, w: w) }
+    var xwxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, x, w) }
     }
-    var xwyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: y, w: x) }
+    var xwyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, y, x) }
     }
-    var xwyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: y, w: y) }
+    var xwyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, y, y) }
     }
-    var xwyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: y, w: z) }
-        set (v) { x = v.0; w = v.1; y = v.2; z = v.3 }
+    var xwyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, y, z) }
+        set { (x, w, y, z) = newValue }
     }
-    var xwywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: y, w: w) }
+    var xwyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, y, w) }
     }
-    var xwzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: z, w: x) }
+    var xwzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, z, x) }
     }
-    var xwzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: z, w: y) }
-        set (v) { x = v.0; w = v.1; z = v.2; y = v.3 }
+    var xwzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, z, y) }
+        set { (x, w, z, y) = newValue }
     }
-    var xwzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: z, w: z) }
+    var xwzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, z, z) }
     }
-    var xwzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: z, w: w) }
+    var xwzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, z, w) }
     }
-    var xwwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: w, w: x) }
+    var xwwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, w, x) }
     }
-    var xwwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: w, w: y) }
+    var xwwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, w, y) }
     }
-    var xwwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: w, w: z) }
+    var xwwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, w, z) }
     }
-    var xwwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: x, y: w, z: w, w: w) }
+    var xwww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (x, w, w, w) }
     }
-    var yxxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: x, w: x) }
+    var yxxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, x, x) }
     }
-    var yxxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: x, w: y) }
+    var yxxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, x, y) }
     }
-    var yxxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: x, w: z) }
+    var yxxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, x, z) }
     }
-    var yxxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: x, w: w) }
+    var yxxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, x, w) }
     }
-    var yxyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: y, w: x) }
+    var yxyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, y, x) }
     }
-    var yxyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: y, w: y) }
+    var yxyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, y, y) }
     }
-    var yxyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: y, w: z) }
+    var yxyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, y, z) }
     }
-    var yxywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: y, w: w) }
+    var yxyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, y, w) }
     }
-    var yxzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: z, w: x) }
+    var yxzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, z, x) }
     }
-    var yxzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: z, w: y) }
+    var yxzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, z, y) }
     }
-    var yxzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: z, w: z) }
+    var yxzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, z, z) }
     }
-    var yxzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: z, w: w) }
-        set (v) { y = v.0; x = v.1; z = v.2; w = v.3 }
+    var yxzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, z, w) }
+        set { (y, x, z, w) = newValue }
     }
-    var yxwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: w, w: x) }
+    var yxwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, w, x) }
     }
-    var yxwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: w, w: y) }
+    var yxwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, w, y) }
     }
-    var yxwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: w, w: z) }
-        set (v) { y = v.0; x = v.1; w = v.2; z = v.3 }
+    var yxwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, w, z) }
+        set { (y, x, w, z) = newValue }
     }
-    var yxwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: x, z: w, w: w) }
+    var yxww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, x, w, w) }
     }
-    var yyxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: x, w: x) }
+    var yyxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, x, x) }
     }
-    var yyxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: x, w: y) }
+    var yyxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, x, y) }
     }
-    var yyxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: x, w: z) }
+    var yyxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, x, z) }
     }
-    var yyxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: x, w: w) }
+    var yyxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, x, w) }
     }
-    var yyyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: y, w: x) }
+    var yyyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, y, x) }
     }
-    var yyyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: y, w: y) }
+    var yyyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, y, y) }
     }
-    var yyyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: y, w: z) }
+    var yyyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, y, z) }
     }
-    var yyywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: y, w: w) }
+    var yyyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, y, w) }
     }
-    var yyzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: z, w: x) }
+    var yyzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, z, x) }
     }
-    var yyzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: z, w: y) }
+    var yyzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, z, y) }
     }
-    var yyzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: z, w: z) }
+    var yyzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, z, z) }
     }
-    var yyzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: z, w: w) }
+    var yyzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, z, w) }
     }
-    var yywxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: w, w: x) }
+    var yywx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, w, x) }
     }
-    var yywyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: w, w: y) }
+    var yywy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, w, y) }
     }
-    var yywzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: w, w: z) }
+    var yywz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, w, z) }
     }
-    var yywwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: y, z: w, w: w) }
+    var yyww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, y, w, w) }
     }
-    var yzxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: x, w: x) }
+    var yzxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, x, x) }
     }
-    var yzxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: x, w: y) }
+    var yzxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, x, y) }
     }
-    var yzxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: x, w: z) }
+    var yzxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, x, z) }
     }
-    var yzxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: x, w: w) }
-        set (v) { y = v.0; z = v.1; x = v.2; w = v.3 }
+    var yzxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, x, w) }
+        set { (y, z, x, w) = newValue }
     }
-    var yzyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: y, w: x) }
+    var yzyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, y, x) }
     }
-    var yzyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: y, w: y) }
+    var yzyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, y, y) }
     }
-    var yzyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: y, w: z) }
+    var yzyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, y, z) }
     }
-    var yzywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: y, w: w) }
+    var yzyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, y, w) }
     }
-    var yzzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: z, w: x) }
+    var yzzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, z, x) }
     }
-    var yzzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: z, w: y) }
+    var yzzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, z, y) }
     }
-    var yzzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: z, w: z) }
+    var yzzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, z, z) }
     }
-    var yzzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: z, w: w) }
+    var yzzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, z, w) }
     }
-    var yzwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: w, w: x) }
-        set (v) { y = v.0; z = v.1; w = v.2; x = v.3 }
+    var yzwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, w, x) }
+        set { (y, z, w, x) = newValue }
     }
-    var yzwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: w, w: y) }
+    var yzwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, w, y) }
     }
-    var yzwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: w, w: z) }
+    var yzwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, w, z) }
     }
-    var yzwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: z, z: w, w: w) }
+    var yzww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, z, w, w) }
     }
-    var ywxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: x, w: x) }
+    var ywxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, x, x) }
     }
-    var ywxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: x, w: y) }
+    var ywxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, x, y) }
     }
-    var ywxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: x, w: z) }
-        set (v) { y = v.0; w = v.1; x = v.2; z = v.3 }
+    var ywxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, x, z) }
+        set { (y, w, x, z) = newValue }
     }
-    var ywxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: x, w: w) }
+    var ywxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, x, w) }
     }
-    var ywyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: y, w: x) }
+    var ywyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, y, x) }
     }
-    var ywyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: y, w: y) }
+    var ywyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, y, y) }
     }
-    var ywyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: y, w: z) }
+    var ywyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, y, z) }
     }
-    var ywywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: y, w: w) }
+    var ywyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, y, w) }
     }
-    var ywzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: z, w: x) }
-        set (v) { y = v.0; w = v.1; z = v.2; x = v.3 }
+    var ywzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, z, x) }
+        set { (y, w, z, x) = newValue }
     }
-    var ywzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: z, w: y) }
+    var ywzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, z, y) }
     }
-    var ywzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: z, w: z) }
+    var ywzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, z, z) }
     }
-    var ywzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: z, w: w) }
+    var ywzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, z, w) }
     }
-    var ywwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: w, w: x) }
+    var ywwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, w, x) }
     }
-    var ywwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: w, w: y) }
+    var ywwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, w, y) }
     }
-    var ywwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: w, w: z) }
+    var ywwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, w, z) }
     }
-    var ywwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: y, y: w, z: w, w: w) }
+    var ywww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (y, w, w, w) }
     }
-    var zxxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: x, w: x) }
+    var zxxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, x, x) }
     }
-    var zxxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: x, w: y) }
+    var zxxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, x, y) }
     }
-    var zxxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: x, w: z) }
+    var zxxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, x, z) }
     }
-    var zxxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: x, w: w) }
+    var zxxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, x, w) }
     }
-    var zxyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: y, w: x) }
+    var zxyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, y, x) }
     }
-    var zxyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: y, w: y) }
+    var zxyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, y, y) }
     }
-    var zxyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: y, w: z) }
+    var zxyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, y, z) }
     }
-    var zxywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: y, w: w) }
-        set (v) { z = v.0; x = v.1; y = v.2; w = v.3 }
+    var zxyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, y, w) }
+        set { (z, x, y, w) = newValue }
     }
-    var zxzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: z, w: x) }
+    var zxzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, z, x) }
     }
-    var zxzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: z, w: y) }
+    var zxzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, z, y) }
     }
-    var zxzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: z, w: z) }
+    var zxzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, z, z) }
     }
-    var zxzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: z, w: w) }
+    var zxzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, z, w) }
     }
-    var zxwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: w, w: x) }
+    var zxwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, w, x) }
     }
-    var zxwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: w, w: y) }
-        set (v) { z = v.0; x = v.1; w = v.2; y = v.3 }
+    var zxwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, w, y) }
+        set { (z, x, w, y) = newValue }
     }
-    var zxwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: w, w: z) }
+    var zxwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, w, z) }
     }
-    var zxwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: x, z: w, w: w) }
+    var zxww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, x, w, w) }
     }
-    var zyxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: x, w: x) }
+    var zyxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, x, x) }
     }
-    var zyxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: x, w: y) }
+    var zyxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, x, y) }
     }
-    var zyxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: x, w: z) }
+    var zyxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, x, z) }
     }
-    var zyxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: x, w: w) }
-        set (v) { z = v.0; y = v.1; x = v.2; w = v.3 }
+    var zyxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, x, w) }
+        set { (z, y, x, w) = newValue }
     }
-    var zyyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: y, w: x) }
+    var zyyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, y, x) }
     }
-    var zyyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: y, w: y) }
+    var zyyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, y, y) }
     }
-    var zyyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: y, w: z) }
+    var zyyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, y, z) }
     }
-    var zyywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: y, w: w) }
+    var zyyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, y, w) }
     }
-    var zyzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: z, w: x) }
+    var zyzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, z, x) }
     }
-    var zyzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: z, w: y) }
+    var zyzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, z, y) }
     }
-    var zyzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: z, w: z) }
+    var zyzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, z, z) }
     }
-    var zyzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: z, w: w) }
+    var zyzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, z, w) }
     }
-    var zywxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: w, w: x) }
-        set (v) { z = v.0; y = v.1; w = v.2; x = v.3 }
+    var zywx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, w, x) }
+        set { (z, y, w, x) = newValue }
     }
-    var zywyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: w, w: y) }
+    var zywy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, w, y) }
     }
-    var zywzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: w, w: z) }
+    var zywz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, w, z) }
     }
-    var zywwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: y, z: w, w: w) }
+    var zyww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, y, w, w) }
     }
-    var zzxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: x, w: x) }
+    var zzxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, x, x) }
     }
-    var zzxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: x, w: y) }
+    var zzxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, x, y) }
     }
-    var zzxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: x, w: z) }
+    var zzxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, x, z) }
     }
-    var zzxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: x, w: w) }
+    var zzxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, x, w) }
     }
-    var zzyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: y, w: x) }
+    var zzyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, y, x) }
     }
-    var zzyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: y, w: y) }
+    var zzyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, y, y) }
     }
-    var zzyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: y, w: z) }
+    var zzyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, y, z) }
     }
-    var zzywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: y, w: w) }
+    var zzyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, y, w) }
     }
-    var zzzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: z, w: x) }
+    var zzzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, z, x) }
     }
-    var zzzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: z, w: y) }
+    var zzzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, z, y) }
     }
-    var zzzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: z, w: z) }
+    var zzzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, z, z) }
     }
-    var zzzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: z, w: w) }
+    var zzzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, z, w) }
     }
-    var zzwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: w, w: x) }
+    var zzwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, w, x) }
     }
-    var zzwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: w, w: y) }
+    var zzwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, w, y) }
     }
-    var zzwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: w, w: z) }
+    var zzwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, w, z) }
     }
-    var zzwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: z, z: w, w: w) }
+    var zzww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, z, w, w) }
     }
-    var zwxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: x, w: x) }
+    var zwxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, x, x) }
     }
-    var zwxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: x, w: y) }
-        set (v) { z = v.0; w = v.1; x = v.2; y = v.3 }
+    var zwxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, x, y) }
+        set { (z, w, x, y) = newValue }
     }
-    var zwxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: x, w: z) }
+    var zwxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, x, z) }
     }
-    var zwxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: x, w: w) }
+    var zwxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, x, w) }
     }
-    var zwyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: y, w: x) }
-        set (v) { z = v.0; w = v.1; y = v.2; x = v.3 }
+    var zwyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, y, x) }
+        set { (z, w, y, x) = newValue }
     }
-    var zwyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: y, w: y) }
+    var zwyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, y, y) }
     }
-    var zwyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: y, w: z) }
+    var zwyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, y, z) }
     }
-    var zwywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: y, w: w) }
+    var zwyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, y, w) }
     }
-    var zwzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: z, w: x) }
+    var zwzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, z, x) }
     }
-    var zwzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: z, w: y) }
+    var zwzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, z, y) }
     }
-    var zwzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: z, w: z) }
+    var zwzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, z, z) }
     }
-    var zwzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: z, w: w) }
+    var zwzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, z, w) }
     }
-    var zwwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: w, w: x) }
+    var zwwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, w, x) }
     }
-    var zwwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: w, w: y) }
+    var zwwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, w, y) }
     }
-    var zwwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: w, w: z) }
+    var zwwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, w, z) }
     }
-    var zwwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: z, y: w, z: w, w: w) }
+    var zwww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (z, w, w, w) }
     }
-    var wxxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: x, w: x) }
+    var wxxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, x, x) }
     }
-    var wxxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: x, w: y) }
+    var wxxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, x, y) }
     }
-    var wxxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: x, w: z) }
+    var wxxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, x, z) }
     }
-    var wxxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: x, w: w) }
+    var wxxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, x, w) }
     }
-    var wxyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: y, w: x) }
+    var wxyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, y, x) }
     }
-    var wxyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: y, w: y) }
+    var wxyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, y, y) }
     }
-    var wxyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: y, w: z) }
-        set (v) { w = v.0; x = v.1; y = v.2; z = v.3 }
+    var wxyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, y, z) }
+        set { (w, x, y, z) = newValue }
     }
-    var wxywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: y, w: w) }
+    var wxyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, y, w) }
     }
-    var wxzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: z, w: x) }
+    var wxzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, z, x) }
     }
-    var wxzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: z, w: y) }
-        set (v) { w = v.0; x = v.1; z = v.2; y = v.3 }
+    var wxzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, z, y) }
+        set { (w, x, z, y) = newValue }
     }
-    var wxzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: z, w: z) }
+    var wxzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, z, z) }
     }
-    var wxzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: z, w: w) }
+    var wxzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, z, w) }
     }
-    var wxwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: w, w: x) }
+    var wxwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, w, x) }
     }
-    var wxwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: w, w: y) }
+    var wxwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, w, y) }
     }
-    var wxwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: w, w: z) }
+    var wxwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, w, z) }
     }
-    var wxwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: x, z: w, w: w) }
+    var wxww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, x, w, w) }
     }
-    var wyxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: x, w: x) }
+    var wyxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, x, x) }
     }
-    var wyxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: x, w: y) }
+    var wyxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, x, y) }
     }
-    var wyxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: x, w: z) }
-        set (v) { w = v.0; y = v.1; x = v.2; z = v.3 }
+    var wyxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, x, z) }
+        set { (w, y, x, z) = newValue }
     }
-    var wyxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: x, w: w) }
+    var wyxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, x, w) }
     }
-    var wyyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: y, w: x) }
+    var wyyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, y, x) }
     }
-    var wyyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: y, w: y) }
+    var wyyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, y, y) }
     }
-    var wyyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: y, w: z) }
+    var wyyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, y, z) }
     }
-    var wyywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: y, w: w) }
+    var wyyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, y, w) }
     }
-    var wyzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: z, w: x) }
-        set (v) { w = v.0; y = v.1; z = v.2; x = v.3 }
+    var wyzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, z, x) }
+        set { (w, y, z, x) = newValue }
     }
-    var wyzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: z, w: y) }
+    var wyzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, z, y) }
     }
-    var wyzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: z, w: z) }
+    var wyzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, z, z) }
     }
-    var wyzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: z, w: w) }
+    var wyzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, z, w) }
     }
-    var wywxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: w, w: x) }
+    var wywx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, w, x) }
     }
-    var wywyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: w, w: y) }
+    var wywy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, w, y) }
     }
-    var wywzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: w, w: z) }
+    var wywz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, w, z) }
     }
-    var wywwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: y, z: w, w: w) }
+    var wyww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, y, w, w) }
     }
-    var wzxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: x, w: x) }
+    var wzxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, x, x) }
     }
-    var wzxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: x, w: y) }
-        set (v) { w = v.0; z = v.1; x = v.2; y = v.3 }
+    var wzxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, x, y) }
+        set { (w, z, x, y) = newValue }
     }
-    var wzxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: x, w: z) }
+    var wzxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, x, z) }
     }
-    var wzxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: x, w: w) }
+    var wzxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, x, w) }
     }
-    var wzyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: y, w: x) }
-        set (v) { w = v.0; z = v.1; y = v.2; x = v.3 }
+    var wzyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, y, x) }
+        set { (w, z, y, x) = newValue }
     }
-    var wzyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: y, w: y) }
+    var wzyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, y, y) }
     }
-    var wzyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: y, w: z) }
+    var wzyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, y, z) }
     }
-    var wzywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: y, w: w) }
+    var wzyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, y, w) }
     }
-    var wzzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: z, w: x) }
+    var wzzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, z, x) }
     }
-    var wzzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: z, w: y) }
+    var wzzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, z, y) }
     }
-    var wzzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: z, w: z) }
+    var wzzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, z, z) }
     }
-    var wzzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: z, w: w) }
+    var wzzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, z, w) }
     }
-    var wzwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: w, w: x) }
+    var wzwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, w, x) }
     }
-    var wzwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: w, w: y) }
+    var wzwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, w, y) }
     }
-    var wzwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: w, w: z) }
+    var wzwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, w, z) }
     }
-    var wzwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: z, z: w, w: w) }
+    var wzww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, z, w, w) }
     }
-    var wwxxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: x, w: x) }
+    var wwxx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, x, x) }
     }
-    var wwxyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: x, w: y) }
+    var wwxy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, x, y) }
     }
-    var wwxzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: x, w: z) }
+    var wwxz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, x, z) }
     }
-    var wwxwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: x, w: w) }
+    var wwxw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, x, w) }
     }
-    var wwyxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: y, w: x) }
+    var wwyx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, y, x) }
     }
-    var wwyyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: y, w: y) }
+    var wwyy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, y, y) }
     }
-    var wwyzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: y, w: z) }
+    var wwyz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, y, z) }
     }
-    var wwywTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: y, w: w) }
+    var wwyw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, y, w) }
     }
-    var wwzxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: z, w: x) }
+    var wwzx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, z, x) }
     }
-    var wwzyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: z, w: y) }
+    var wwzy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, z, y) }
     }
-    var wwzzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: z, w: z) }
+    var wwzz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, z, z) }
     }
-    var wwzwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: z, w: w) }
+    var wwzw: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, z, w) }
     }
-    var wwwxTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: w, w: x) }
+    var wwwx: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, w, x) }
     }
-    var wwwyTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: w, w: y) }
+    var wwwy: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, w, y) }
     }
-    var wwwzTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: w, w: z) }
+    var wwwz: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, w, z) }
     }
-    var wwwwTuple: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
-        get { (x: w, y: w, z: w, w: w) }
+    var wwww: (x:Scalar, y:Scalar, z:Scalar, w:Scalar) {
+        get { (w, w, w, w) }
     }
-    var xxxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: x, z: x) }
+    var xxx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, x, x) }
     }
-    var xxyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: x, z: y) }
+    var xxy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, x, y) }
     }
-    var xxzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: x, z: z) }
+    var xxz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, x, z) }
     }
-    var xxwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: x, z: w) }
+    var xxw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, x, w) }
     }
-    var xyxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: y, z: x) }
+    var xyx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, y, x) }
     }
-    var xyyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: y, z: y) }
+    var xyy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, y, y) }
     }
-    var xyzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: y, z: z) }
-        set (v) { x = v.0; y = v.1; z = v.2 }
+    var xyz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, y, z) }
+        set { (x, y, z) = newValue }
     }
-    var xywTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: y, z: w) }
-        set (v) { x = v.0; y = v.1; w = v.2 }
+    var xyw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, y, w) }
+        set { (x, y, w) = newValue }
     }
-    var xzxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: z, z: x) }
+    var xzx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, z, x) }
     }
-    var xzyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: z, z: y) }
-        set (v) { x = v.0; z = v.1; y = v.2 }
+    var xzy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, z, y) }
+        set { (x, z, y) = newValue }
     }
-    var xzzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: z, z: z) }
+    var xzz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, z, z) }
     }
-    var xzwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: z, z: w) }
-        set (v) { x = v.0; z = v.1; w = v.2 }
+    var xzw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, z, w) }
+        set { (x, z, w) = newValue }
     }
-    var xwxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: w, z: x) }
+    var xwx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, w, x) }
     }
-    var xwyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: w, z: y) }
-        set (v) { x = v.0; w = v.1; y = v.2 }
+    var xwy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, w, y) }
+        set { (x, w, y) = newValue }
     }
-    var xwzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: w, z: z) }
-        set (v) { x = v.0; w = v.1; z = v.2 }
+    var xwz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, w, z) }
+        set { (x, w, z) = newValue }
     }
-    var xwwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: x, y: w, z: w) }
+    var xww: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (x, w, w) }
     }
-    var yxxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: x, z: x) }
+    var yxx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, x, x) }
     }
-    var yxyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: x, z: y) }
+    var yxy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, x, y) }
     }
-    var yxzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: x, z: z) }
-        set (v) { y = v.0; x = v.1; z = v.2 }
+    var yxz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, x, z) }
+        set { (y, x, z) = newValue }
     }
-    var yxwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: x, z: w) }
-        set (v) { y = v.0; x = v.1; w = v.2 }
+    var yxw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, x, w) }
+        set { (y, x, w) = newValue }
     }
-    var yyxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: y, z: x) }
+    var yyx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, y, x) }
     }
-    var yyyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: y, z: y) }
+    var yyy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, y, y) }
     }
-    var yyzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: y, z: z) }
+    var yyz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, y, z) }
     }
-    var yywTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: y, z: w) }
+    var yyw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, y, w) }
     }
-    var yzxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: z, z: x) }
-        set (v) { y = v.0; z = v.1; x = v.2 }
+    var yzx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, z, x) }
+        set { (y, z, x) = newValue }
     }
-    var yzyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: z, z: y) }
+    var yzy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, z, y) }
     }
-    var yzzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: z, z: z) }
+    var yzz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, z, z) }
     }
-    var yzwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: z, z: w) }
-        set (v) { y = v.0; z = v.1; w = v.2 }
+    var yzw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, z, w) }
+        set { (y, z, w) = newValue }
     }
-    var ywxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: w, z: x) }
-        set (v) { y = v.0; w = v.1; x = v.2 }
+    var ywx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, w, x) }
+        set { (y, w, x) = newValue }
     }
-    var ywyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: w, z: y) }
+    var ywy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, w, y) }
     }
-    var ywzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: w, z: z) }
-        set (v) { y = v.0; w = v.1; z = v.2 }
+    var ywz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, w, z) }
+        set { (y, w, z) = newValue }
     }
-    var ywwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: y, y: w, z: w) }
+    var yww: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (y, w, w) }
     }
-    var zxxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: x, z: x) }
+    var zxx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, x, x) }
     }
-    var zxyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: x, z: y) }
-        set (v) { z = v.0; x = v.1; y = v.2 }
+    var zxy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, x, y) }
+        set { (z, x, y) = newValue }
     }
-    var zxzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: x, z: z) }
+    var zxz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, x, z) }
     }
-    var zxwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: x, z: w) }
-        set (v) { z = v.0; x = v.1; w = v.2 }
+    var zxw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, x, w) }
+        set { (z, x, w) = newValue }
     }
-    var zyxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: y, z: x) }
-        set (v) { z = v.0; y = v.1; x = v.2 }
+    var zyx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, y, x) }
+        set { (z, y, x) = newValue }
     }
-    var zyyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: y, z: y) }
+    var zyy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, y, y) }
     }
-    var zyzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: y, z: z) }
+    var zyz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, y, z) }
     }
-    var zywTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: y, z: w) }
-        set (v) { z = v.0; y = v.1; w = v.2 }
+    var zyw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, y, w) }
+        set { (z, y, w) = newValue }
     }
-    var zzxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: z, z: x) }
+    var zzx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, z, x) }
     }
-    var zzyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: z, z: y) }
+    var zzy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, z, y) }
     }
-    var zzzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: z, z: z) }
+    var zzz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, z, z) }
     }
-    var zzwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: z, z: w) }
+    var zzw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, z, w) }
     }
-    var zwxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: w, z: x) }
-        set (v) { z = v.0; w = v.1; x = v.2 }
+    var zwx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, w, x) }
+        set { (z, w, x) = newValue }
     }
-    var zwyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: w, z: y) }
-        set (v) { z = v.0; w = v.1; y = v.2 }
+    var zwy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, w, y) }
+        set { (z, w, y) = newValue }
     }
-    var zwzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: w, z: z) }
+    var zwz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, w, z) }
     }
-    var zwwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: z, y: w, z: w) }
+    var zww: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (z, w, w) }
     }
-    var wxxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: x, z: x) }
+    var wxx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, x, x) }
     }
-    var wxyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: x, z: y) }
-        set (v) { w = v.0; x = v.1; y = v.2 }
+    var wxy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, x, y) }
+        set { (w, x, y) = newValue }
     }
-    var wxzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: x, z: z) }
-        set (v) { w = v.0; x = v.1; z = v.2 }
+    var wxz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, x, z) }
+        set { (w, x, z) = newValue }
     }
-    var wxwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: x, z: w) }
+    var wxw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, x, w) }
     }
-    var wyxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: y, z: x) }
-        set (v) { w = v.0; y = v.1; x = v.2 }
+    var wyx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, y, x) }
+        set { (w, y, x) = newValue }
     }
-    var wyyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: y, z: y) }
+    var wyy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, y, y) }
     }
-    var wyzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: y, z: z) }
-        set (v) { w = v.0; y = v.1; z = v.2 }
+    var wyz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, y, z) }
+        set { (w, y, z) = newValue }
     }
-    var wywTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: y, z: w) }
+    var wyw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, y, w) }
     }
-    var wzxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: z, z: x) }
-        set (v) { w = v.0; z = v.1; x = v.2 }
+    var wzx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, z, x) }
+        set { (w, z, x) = newValue }
     }
-    var wzyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: z, z: y) }
-        set (v) { w = v.0; z = v.1; y = v.2 }
+    var wzy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, z, y) }
+        set { (w, z, y) = newValue }
     }
-    var wzzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: z, z: z) }
+    var wzz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, z, z) }
     }
-    var wzwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: z, z: w) }
+    var wzw: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, z, w) }
     }
-    var wwxTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: w, z: x) }
+    var wwx: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, w, x) }
     }
-    var wwyTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: w, z: y) }
+    var wwy: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, w, y) }
     }
-    var wwzTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: w, z: z) }
+    var wwz: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, w, z) }
     }
-    var wwwTuple: (x:Scalar, y:Scalar, z:Scalar) {
-        get { (x: w, y: w, z: w) }
+    var www: (x:Scalar, y:Scalar, z:Scalar) {
+        get { (w, w, w) }
     }
-    var xxTuple: (x:Scalar, y:Scalar) {
-        get { (x: x, y: x) }
+    var xx: (x:Scalar, y:Scalar) {
+        get { (x, x) }
     }
-    var xyTuple: (x:Scalar, y:Scalar) {
-        get { (x: x, y: y) }
-        set (v) { x = v.0; y = v.1 }
+    var xy: (x:Scalar, y:Scalar) {
+        get { (x, y) }
+        set { (x, y) = newValue }
     }
-    var xzTuple: (x:Scalar, y:Scalar) {
-        get { (x: x, y: z) }
-        set (v) { x = v.0; z = v.1 }
+    var xz: (x:Scalar, y:Scalar) {
+        get { (x, z) }
+        set { (x, z) = newValue }
     }
-    var xwTuple: (x:Scalar, y:Scalar) {
-        get { (x: x, y: w) }
-        set (v) { x = v.0; w = v.1 }
+    var xw: (x:Scalar, y:Scalar) {
+        get { (x, w) }
+        set { (x, w) = newValue }
     }
-    var yxTuple: (x:Scalar, y:Scalar) {
-        get { (x: y, y: x) }
-        set (v) { y = v.0; x = v.1 }
+    var yx: (x:Scalar, y:Scalar) {
+        get { (y, x) }
+        set { (y, x) = newValue }
     }
-    var yyTuple: (x:Scalar, y:Scalar) {
-        get { (x: y, y: y) }
+    var yy: (x:Scalar, y:Scalar) {
+        get { (y, y) }
     }
-    var yzTuple: (x:Scalar, y:Scalar) {
-        get { (x: y, y: z) }
-        set (v) { y = v.0; z = v.1 }
+    var yz: (x:Scalar, y:Scalar) {
+        get { (y, z) }
+        set { (y, z) = newValue }
     }
-    var ywTuple: (x:Scalar, y:Scalar) {
-        get { (x: y, y: w) }
-        set (v) { y = v.0; w = v.1 }
+    var yw: (x:Scalar, y:Scalar) {
+        get { (y, w) }
+        set { (y, w) = newValue }
     }
-    var zxTuple: (x:Scalar, y:Scalar) {
-        get { (x: z, y: x) }
-        set (v) { z = v.0; x = v.1 }
+    var zx: (x:Scalar, y:Scalar) {
+        get { (z, x) }
+        set { (z, x) = newValue }
     }
-    var zyTuple: (x:Scalar, y:Scalar) {
-        get { (x: z, y: y) }
-        set (v) { z = v.0; y = v.1 }
+    var zy: (x:Scalar, y:Scalar) {
+        get { (z, y) }
+        set { (z, y) = newValue }
     }
-    var zzTuple: (x:Scalar, y:Scalar) {
-        get { (x: z, y: z) }
+    var zz: (x:Scalar, y:Scalar) {
+        get { (z, z) }
     }
-    var zwTuple: (x:Scalar, y:Scalar) {
-        get { (x: z, y: w) }
-        set (v) { z = v.0; w = v.1 }
+    var zw: (x:Scalar, y:Scalar) {
+        get { (z, w) }
+        set { (z, w) = newValue }
     }
-    var wxTuple: (x:Scalar, y:Scalar) {
-        get { (x: w, y: x) }
-        set (v) { w = v.0; x = v.1 }
+    var wx: (x:Scalar, y:Scalar) {
+        get { (w, x) }
+        set { (w, x) = newValue }
     }
-    var wyTuple: (x:Scalar, y:Scalar) {
-        get { (x: w, y: y) }
-        set (v) { w = v.0; y = v.1 }
+    var wy: (x:Scalar, y:Scalar) {
+        get { (w, y) }
+        set { (w, y) = newValue }
     }
-    var wzTuple: (x:Scalar, y:Scalar) {
-        get { (x: w, y: z) }
-        set (v) { w = v.0; z = v.1 }
+    var wz: (x:Scalar, y:Scalar) {
+        get { (w, z) }
+        set { (w, z) = newValue }
     }
-    var wwTuple: (x:Scalar, y:Scalar) {
-        get { (x: w, y: w) }
+    var ww: (x:Scalar, y:Scalar) {
+        get { (w, w) }
     }
 }
 
