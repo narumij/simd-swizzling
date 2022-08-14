@@ -8,8 +8,8 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(name: "simd_swizzling",  targets: ["simd_swizzling"]),
-        .library(name: "simd_swizzling_xyz",  targets: ["simd_swizzling_xyz"]),
-        .library(name: "simd_tuple_xyz",  targets: ["simd_tuple_xyz"]),
+        .library(name: "simd_xyz",  targets: ["simd_xyz"]),
+        .library(name: "simd_tuple",  targets: ["simd_tuple"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -18,10 +18,10 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target( name: "simd_swizzling", dependencies: ["simd_swizzling_xyz","simd_tuple_xyz"]),
+        .target( name: "simd_swizzling", dependencies: ["simd_xyz","simd_tuple"]),
         .testTarget( name: "simd_swizzlingTests", dependencies: ["simd_swizzling"]),
         
-        .target( name: "simd_swizzling_xyz", dependencies: []),
-        .target( name: "simd_tuple_xyz", dependencies: []),
+        .target( name: "simd_xyz", dependencies: []),
+        .target( name: "simd_tuple", dependencies: []),
     ]
 )
